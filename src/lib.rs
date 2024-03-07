@@ -71,7 +71,7 @@ async fn main(req: Request, env: Env, _ctx: Context) -> Result<Response> {
         .post_async(&req_path, |mut req, ctx| async move {
             let username = ctx.secret("FULL_USERNAME")?.to_string();
             let password = ctx.secret("PASSWORD")?.to_string();
-            let base_url = "https://bsky.social";
+            let base_url = "https://bsky.kit-a.net";
 
             let Content { mut text } = match req.json().await {
                 Ok(val) => val,
